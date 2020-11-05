@@ -13,7 +13,7 @@ This contains codes for the GraphRetriever that is proposed in the paper, [Knowl
 
 This README only describe the minimal set of command lines to run the GraphRetriever, and does not contain sufficient details about the model and how the code works. For more details, we recommend to read the paper or read the code.
 
-0. Download QA data
+## 0. Download QA data
 
 Download the data for your QA task in `data/`.
 
@@ -24,7 +24,7 @@ unzip {webquestions|nq|triviaqa}.zip -d data/
 rm {webquestions|nq|triviaqa}.zip
 ```
 
-1. Preprocessing
+## 1. Preprocessing
 
 For Wikipedia, you need DB and TF-IDF index by following [DrQA](https://github.com/facebookresearch/DrQA).
 
@@ -38,7 +38,7 @@ This preprocessing code looks complicated, but what it really does is to store a
 Running preprocessing may take more than a few days depending on multiprocess availability. We recommend to modify the code if you want to print out the progress during preprocessing.
 
 
-2. Extracting entities from the question
+## 2. Extracting entities from the question
 
 Now, run `Tagme.py` to extract entities from the question.
 
@@ -52,7 +52,7 @@ Running `Tagme.py` will save entity data in `data/{webquestions|nq|triviaqa}|{we
 
 This part can be easily replaced by any better entity extraction model. For instance, you can use [ELQ](https://github.com/facebookresearch/BLINK/tree/master/elq) which has shown much better performance than TAGME on entity linking for questions (see [paper](https://arxiv.org/abs/2010.02413) for comparisons).
 
-3. Running GraphRetriever
+## 3. Running GraphRetriever
 
 Now, in order to actually run the GraphRetriever to get a paragraph graph using entities in the question, Wikipedia and Wikidata, please run the following command.
 
