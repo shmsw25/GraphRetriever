@@ -57,7 +57,7 @@ This part can be easily replaced by any better entity extraction model. For inst
 Now, in order to actually run the GraphRetriever to get a paragraph graph using entities in the question, Wikipedia and Wikidata, please run the following command.
 
 ```
-python3 retrieve_hybrid.json --data {webquestions|nq|triviaqa} --data_type {train|dev|test} \
+python3 retrieve_hybrid.py --data {webquestions|nq|triviaqa} --data_type {train|dev|test} \
   --wiki_db_path {path_to_wiki_db_from_drqa} \
   --tfidf_path {path_to_tfidf_from_drqa} \
   --data_dir {path_to_wikidata_dir_you_preprocessed}
